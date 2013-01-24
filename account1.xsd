@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <schema targetNamespace="http://tempuri.org/account1.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:account1="http://tempuri.org/account1.xsd"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <!-- operation request element -->
+  <element name="init">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__init::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="initResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__init::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="addMoney">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__addMoney::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="addMoneyResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__addMoney::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="withdrawMoney">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__withdrawMoney::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="withdrawMoneyResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__withdrawMoney::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="getAmount">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="getAmountResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__getAmount::result -->
+    </sequence>
+   </complexType>
+  </element>
+ </schema>
+

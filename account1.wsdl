@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="Service"
+ targetNamespace="http://tempuri.org/account1.xsd/Service.wsdl"
+ xmlns:tns="http://tempuri.org/account1.xsd/Service.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:account1="http://tempuri.org/account1.xsd"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="http://tempuri.org/account1.xsd"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:account1="http://tempuri.org/account1.xsd"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  <!-- operation request element -->
+  <element name="init">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__init::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="initResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__init::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="addMoney">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__addMoney::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="addMoneyResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__addMoney::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="withdrawMoney">
+   <complexType>
+    <sequence>
+     <element name="amount" type="xsd:float" minOccurs="1" maxOccurs="1"/><!-- account1__withdrawMoney::amount -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="withdrawMoneyResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__withdrawMoney::result -->
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation request element -->
+  <element name="getAmount">
+   <complexType>
+    <sequence>
+    </sequence>
+   </complexType>
+  </element>
+  <!-- operation response element -->
+  <element name="getAmountResponse">
+   <complexType>
+    <sequence>
+     <element name="result" type="xsd:float" minOccurs="0" maxOccurs="1" nillable="true"/><!-- account1__getAmount::result -->
+    </sequence>
+   </complexType>
+  </element>
+ </schema>
+
+</types>
+
+<message name="initRequest">
+ <part name="parameters" element="account1:init"/><!-- account1__init::account1__init -->
+</message>
+
+<message name="initResponse">
+ <part name="parameters" element="account1:initResponse"/>
+</message>
+
+<message name="addMoneyRequest">
+ <part name="parameters" element="account1:addMoney"/><!-- account1__addMoney::account1__addMoney -->
+</message>
+
+<message name="addMoneyResponse">
+ <part name="parameters" element="account1:addMoneyResponse"/>
+</message>
+
+<message name="withdrawMoneyRequest">
+ <part name="parameters" element="account1:withdrawMoney"/><!-- account1__withdrawMoney::account1__withdrawMoney -->
+</message>
+
+<message name="withdrawMoneyResponse">
+ <part name="parameters" element="account1:withdrawMoneyResponse"/>
+</message>
+
+<message name="getAmountRequest">
+ <part name="parameters" element="account1:getAmount"/><!-- account1__getAmount::account1__getAmount -->
+</message>
+
+<message name="getAmountResponse">
+ <part name="parameters" element="account1:getAmountResponse"/>
+</message>
+
+<portType name="ServicePortType">
+ <operation name="init">
+  <documentation>Service definition of function account1__init</documentation>
+  <input message="tns:initRequest"/>
+  <output message="tns:initResponse"/>
+ </operation>
+ <operation name="addMoney">
+  <documentation>Service definition of function account1__addMoney</documentation>
+  <input message="tns:addMoneyRequest"/>
+  <output message="tns:addMoneyResponse"/>
+ </operation>
+ <operation name="withdrawMoney">
+  <documentation>Service definition of function account1__withdrawMoney</documentation>
+  <input message="tns:withdrawMoneyRequest"/>
+  <output message="tns:withdrawMoneyResponse"/>
+ </operation>
+ <operation name="getAmount">
+  <documentation>Service definition of function account1__getAmount</documentation>
+  <input message="tns:getAmountRequest"/>
+  <output message="tns:getAmountResponse"/>
+ </operation>
+</portType>
+
+<binding name="Service" type="tns:ServicePortType">
+ <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="init">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="addMoney">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="withdrawMoney">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+ <operation name="getAmount">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="Service">
+ <documentation>gSOAP 2.8.11 generated service definition</documentation>
+ <port name="Service" binding="tns:Service">
+  <SOAP:address location="http://localhost:80"/>
+ </port>
+</service>
+
+</definitions>
